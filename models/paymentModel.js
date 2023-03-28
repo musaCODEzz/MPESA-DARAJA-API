@@ -22,15 +22,6 @@ const paymentSchema = new Schema({
         type: Date,
         default: Date.now,
     },
-
-    
-    
-       
-
-    
-        
-
-    
 });
 
 const Payment = mongoose.model("Payment", paymentSchema);

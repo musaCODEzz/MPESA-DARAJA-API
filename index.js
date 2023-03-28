@@ -3,8 +3,13 @@ const app = express();
 const cors = require('cors');
 const axios = require('axios');
 const mongoose = require('mongoose');
+const ejs = require('ejs');
 require('dotenv').config();
 const port = process.env.PORT || 8000;
+
+app.set('view engine', 'ejs');
+
+
 
 const Payment = require('./models/paymentModel');
 
@@ -25,8 +30,21 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+async function getPayment(){
+    const Payments = await Payment.find({});
+    return Payments;
+    
+}
+
 app.get('/', (req, res) => {
-    res.send('<h3>Hello Musa Max </h3>')
+
+    getPayment().then(function (payments){
+        res.render('index',{
+            paymentList: payments
+        })
+    })
+
+
 });
 
 
