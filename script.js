@@ -1,11 +1,12 @@
 
 
-//saving the data to the database
-const Payment = require('./models/paymentModel');
+
 
 
 document.getElementById("submit").addEventListener("click", function(event){
     event.preventDefault();
+    //const Payment = require('./models/paymentModel');
+
     const phone = document.getElementById("phone").value;
     const amount = document.getElementById("amount").value;
     console.log({phone, amount});

@@ -14,8 +14,6 @@ app.set('view engine', 'ejs');
 const Payment = require('./models/paymentModel');
 
 
-
-
 mongoose.connect('mongodb+srv://Admin:admin123@cluster0.pghdyh2.mongodb.net/?retryWrites=true&w=majority').then(() => {
     console.log("Connected to MongoDB");
 }).catch((error) => {
@@ -47,6 +45,9 @@ app.get('/', (req, res) => {
 
 });
 
+app.get("/", (req, res) => {
+    res.send("Welcome")
+})
 
 // app.get("/token", (req, res) => {
 //     generateToken();
