@@ -1,7 +1,7 @@
 
 
 
-
+ //const Payment = require('./models/paymentModel');
 
 document.getElementById("submit").addEventListener("click", function(event){
     event.preventDefault();

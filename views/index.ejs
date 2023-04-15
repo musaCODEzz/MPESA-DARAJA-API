@@ -32,9 +32,14 @@
 
                     </th>
                     
+                    
                     <td><% paymentList.forEach(payment => {%>
-                        <p><%= payment.number %></p>
+                        <p><%= payment.number.slice(0, 4) + "****" + payment.number.slice(8, 12) %></p>
                         <%})%></td>
+
+                    <!-- <td><% paymentList.forEach(payment => {%>
+                        <p><%= payment.number %></p>
+                        <%})%></td> -->
                     <td><% paymentList.forEach(payment => {%>
                         <p><%= payment.amount %></p>
                         <%})%></td>
